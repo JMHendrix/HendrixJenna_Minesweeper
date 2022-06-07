@@ -8,9 +8,15 @@ public:
 	~cMain();
 
 public:
-	wxButton *button1 = nullptr;
-	wxTextCtrl *textCtrl1 = nullptr;
-	wxListBox *listBox1 = nullptr;
+	int nFieldWidth = 10;
+	int nFieldHeight = 10;
+	//array of button ptrs
+	wxButton **btn;
+	int* mineField = nullptr; 
+	bool bFirstClick = true;  //if true, populate the mine field
 
+	void OnButtonClicked(wxCommandEvent &evt);
+
+	wxDECLARE_EVENT_TABLE();
 };
 
